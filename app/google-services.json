@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "499816302679",
+    "firebase_url": "https://roome-f6cac.firebaseio.com",
+    "project_id": "roome-f6cac",
+    "storage_bucket": "roome-f6cac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499816302679:android:e775a1eb33d3c230",
+        "android_client_info": {
+          "package_name": "com.inallofexistence.greatestdevelopersever.roome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "499816302679-d5gqtfar7gqh1a14ub3tki43jl47pali.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.inallofexistence.greatestdevelopersever.roome",
+            "certificate_hash": "610906d8fc166c4a1c618776c2bdaf855568dcc0"
+          }
+        },
+        {
+          "client_id": "499816302679-0eocl5s684lbkhem3c8f0m4fsc99p7u0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.inallofexistence.greatestdevelopersever.roome",
+            "certificate_hash": "08466003a45ff76cebb33ff7c1e231d73fea80ad"
+          }
+        },
+        {
+          "client_id": "499816302679-b8310818mrvqkcnqjvtcrphnonb6qcfk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKynrWiPLpaDdZZbeLsoHmlAOSvQIyj_4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "499816302679-b8310818mrvqkcnqjvtcrphnonb6qcfk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
