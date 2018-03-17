@@ -12,9 +12,53 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="HG JOIN" />
+            android:gravity="center_horizontal"
+            android:text="Please paste the ID of the HomeGroup ID you wish to join in the box below, or create a new HomeGroup!"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/hgIDtxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="HomeGroup ID" />
+
+            <Button
+                android:id="@+id/submitBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Join!" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="162dp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="384dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="OR"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <Button
+            android:id="@+id/createHG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create HomeGroup!" />
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
