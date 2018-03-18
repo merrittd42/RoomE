@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="Please paste the ID of the HomeGroup ID you wish to join in the box below, or create a new HomeGroup!"/>
+            android:text="@string/hg_join_instruction" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,14 +30,14 @@
                 android:layout_weight="4"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="HomeGroup ID" />
+                android:text="@string/hg_join_textField" />
 
             <Button
                 android:id="@+id/submitBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Join!" />
+                android:text="@string/hg_join_join" />
 
         </LinearLayout>
 
@@ -51,14 +51,14 @@
             android:layout_height="384dp"
             android:layout_weight="1"
             android:gravity="center_horizontal"
-            android:text="OR"
+            android:text="@string/hg_join_OR"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <Button
             android:id="@+id/createHG"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Create HomeGroup!" />
+            android:text="@string/hg_join_create" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

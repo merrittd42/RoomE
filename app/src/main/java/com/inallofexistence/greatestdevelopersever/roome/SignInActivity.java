@@ -76,10 +76,10 @@ public class SignInActivity extends AppCompatActivity {
         mDatabase.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
                 if(dataSnapshot.hasChild(user.getUid())){
 
-                    User2 user2 = dataSnapshot.getValue(User2.class);
-                    if(user2.hgID == null){
+                    if(dataSnapshot.child(user.getUid()).child("hgID") == null){
                         //Created account but never joined up with a group
                         startActivity(new Intent(SignInActivity.this, JoinCreateHomegroupActivity.class));
                     }else{
@@ -97,7 +97,7 @@ public class SignInActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                Log.e("SignIn", "Error when signing in!", databaseError.toException());
             }
         });
 
@@ -107,7 +107,7 @@ public class SignInActivity extends AppCompatActivity {
     private void createUserInFirebase(FirebaseUser user){
 
         //We use a null hgID value as there should be no way they are in a homegroup
-        User2 mUser = new User2(user.getEmail(), user.getDisplayName(), null);
+        User2 mUser = new User2(user.getDisplayName(), user.getEmail(), null, user.getUid());
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.child("users").child(user.getUid()).setValue(mUser);
     }
