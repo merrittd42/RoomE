@@ -28,6 +28,7 @@
         <activity android:name=".RulesActivity"></activity>
         <activity android:name=".ChatActivity"></activity>
         <activity android:name=".CreateRuleActivity"></activity>
+        <activity android:name=".ViewRuleActivity"></activity>
     </application>
 
 </manifest>

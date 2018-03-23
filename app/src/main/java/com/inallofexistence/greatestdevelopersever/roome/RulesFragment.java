@@ -7,9 +7,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,6 +26,7 @@ import com.inallofexistence.greatestdevelopersever.roome.model.User2;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by quintybox on 3/17/18.
@@ -36,6 +39,8 @@ public class RulesFragment extends Fragment implements View.OnClickListener {
     private ListView listView;
     ArrayList<Rule> ruleList;
     private ArrayAdapter<String> adapter;
+    private HashMap<String, String> ruleNameUIDMap;
+    private String hgID;
 
 
     @Override
@@ -46,6 +51,20 @@ public class RulesFragment extends Fragment implements View.OnClickListener {
         listView = v.findViewById(R.id.ruleList);
         createButton.setOnClickListener(this);
         refreshButton.setOnClickListener(this);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String ruleName = ((TextView)view).getText().toString();
+                Log.d("HelpLz", ruleName);
+                Log.d("Helplz", ruleNameUIDMap.get(ruleName));
+
+                Intent intent = new Intent(getActivity(), ViewRuleActivity.class);
+                intent.putExtra("ruleName", ruleName);
+                intent.putExtra("ruleUID", ruleNameUIDMap.get(ruleName));
+                intent.putExtra("hgID", hgID);
+                startActivity(intent);
+                }
+            }
+        );
         return v;
     }
 
@@ -79,7 +98,7 @@ public class RulesFragment extends Fragment implements View.OnClickListener {
 
                         User2 tempUser = dataSnapshot.getValue(User2.class);
                         Log.d("helpMePlz", tempUser.hgID);
-
+                        hgID = tempUser.hgID;
                         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
                         mDatabase.child("homegroups").child(tempUser.hgID).child("rules").addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
@@ -87,8 +106,9 @@ public class RulesFragment extends Fragment implements View.OnClickListener {
                                 Log.d("helpMePlz", "Got rule reference!");
                                 ruleList = new ArrayList<Rule>();
                                 ArrayList<String> ruleTitleList = new ArrayList<>();
-                                adapter = new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_spinner_item, ruleTitleList);
+                                adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, ruleTitleList);
                                 listView.setAdapter(adapter);
+                                ruleNameUIDMap = new HashMap<>();
                             for(DataSnapshot postSnapshot: dataSnapshot.getChildren()){
                                 Log.d("helpMePlz", "Loaded rule in!");
 
@@ -98,6 +118,8 @@ public class RulesFragment extends Fragment implements View.OnClickListener {
 
                             for(Rule rule: ruleList){
                                 String ruleTitle = rule.ruleName;
+                                String ruleUID = rule.UID;
+                                ruleNameUIDMap.put(ruleTitle,ruleUID);
                                 Log.d("helpMePlz", ruleTitle);
                                 ruleTitleList.add(ruleTitle);
                             }

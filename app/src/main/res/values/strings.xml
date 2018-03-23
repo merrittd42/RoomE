@@ -49,5 +49,13 @@
     <string name ="rules_RuleContent">Rule Content</string>
     <string name ="rules_RuleSubmit">Submit</string>
 
+    <!--
+        View Rule Strings
+    -->
+
+    <string name ="rules_upVote">Yea!</string>
+    <string name ="rules_downVote">Nay!</string>
+    <string name ="rules_delete">Delete</string>
+
 
 </resources>
