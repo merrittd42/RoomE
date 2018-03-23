@@ -126,8 +126,9 @@ public class JoinCreateHomegroupFragment extends Fragment implements View.OnClic
 
                user2.hgID = hgIDSetter;
                mDatabase.child("users").child(user2.UID).setValue(user2);
-
-                startActivity(new Intent(this.getActivity(), HGMenuActivity.class));
+                Intent intent = new Intent(this.getActivity(), HGMenuActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
 
                 this.getActivity().finish();
 

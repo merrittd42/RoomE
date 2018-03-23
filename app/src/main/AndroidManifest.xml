@@ -27,6 +27,7 @@
         <activity android:name=".ShameActivity"></activity>
         <activity android:name=".RulesActivity"></activity>
         <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".CreateRuleActivity"></activity>
     </application>
 
 </manifest>

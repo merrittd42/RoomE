@@ -34,6 +34,20 @@
     <string name ="hg_menu_chat">Chatroom</string>
     <string name ="hg_menu_rules">House Rules</string>
     <string name ="hg_menu_shop">Shopping List</string>
+    <!--
+        Rules Menu Strings
+    -->
+
+    <string name ="rules_create">Create</string>
+    <string name ="rules_refresh">Refresh</string>
+
+    <!--
+        Create Rule Strings
+    -->
+
+    <string name ="rules_ruleName">Rule Name</string>
+    <string name ="rules_RuleContent">Rule Content</string>
+    <string name ="rules_RuleSubmit">Submit</string>
 
 
 </resources>

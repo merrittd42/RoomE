@@ -53,7 +53,7 @@ public class HGMenuFragment extends Fragment implements View.OnClickListener {
     public void onActivityCreated(Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
 
-        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.child("users").child(user.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
