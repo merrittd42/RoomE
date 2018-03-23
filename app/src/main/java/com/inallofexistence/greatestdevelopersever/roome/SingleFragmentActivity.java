@@ -21,6 +21,12 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutResId());
+        startFragWithData();
+
+
+    }
+
+    private void startFragWithData(){
 
         Intent intent = getIntent();
         String ruleName = intent.getStringExtra("ruleName");
@@ -46,17 +52,18 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
             }
         }else{
 
-                FragmentManager fm = getSupportFragmentManager();
-                Fragment fragment = fm.findFragmentById(R.id.fragment_container);
+            FragmentManager fm = getSupportFragmentManager();
+            Fragment fragment = fm.findFragmentById(R.id.fragment_container);
 
-                if (fragment == null) {
-                    fragment = createFragment();
-                    fm.beginTransaction()
-                            .add(R.id.fragment_container, fragment)
-                            .commit();
+            if (fragment == null) {
+                fragment = createFragment();
+                fm.beginTransaction()
+                        .add(R.id.fragment_container, fragment)
+                        .commit();
+
+            }
 
         }
 
-        }
     }
 }
