@@ -25,6 +25,8 @@
         <activity android:name=".JoinCreateHomegroupActivity" />
         <activity android:name=".HGMenuActivity" />
         <activity android:name=".ShameActivity"></activity>
+        <activity android:name=".RulesActivity"></activity>
+        <activity android:name=".ChatActivity"></activity>
     </application>
 
 </manifest>

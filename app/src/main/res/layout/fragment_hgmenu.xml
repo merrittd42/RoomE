@@ -17,18 +17,18 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/ledgerBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="@string/hg_menu_ledger" />
 
             <Button
-                android:id="@+id/button8"
+                android:id="@+id/calendarBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="@string/hg_menu_calendar" />
         </LinearLayout>
 
         <LinearLayout
@@ -37,18 +37,18 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button10"
+                android:id="@+id/chatBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="@string/hg_menu_chat" />
 
             <Button
-                android:id="@+id/button9"
+                android:id="@+id/shopBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="@string/hg_menu_shop" />
         </LinearLayout>
 
         <LinearLayout
@@ -57,18 +57,26 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button11"
+                android:id="@+id/rulesBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="@string/hg_menu_rules" />
 
             <Button
-                android:id="@+id/button12"
+                android:id="@+id/shameBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="@string/hg_menu_shame" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/hgIDTXT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="TextView"
+            android:textStyle="bold" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
