@@ -1,9 +1,11 @@
-package com.inallofexistence.greatestdevelopersever.roome;
+package com.inallofexistence.greatestdevelopersever.roome.shoppinglist;
 
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+
+import com.inallofexistence.greatestdevelopersever.roome.R;
 
 import java.util.ArrayList;
 

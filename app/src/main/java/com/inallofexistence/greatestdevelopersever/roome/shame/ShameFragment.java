@@ -1,4 +1,4 @@
-package com.inallofexistence.greatestdevelopersever.roome;
+package com.inallofexistence.greatestdevelopersever.roome.shame;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.inallofexistence.greatestdevelopersever.roome.R;
 
 /**
  * Created by quintybox on 3/17/18.

@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,9 +17,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.inallofexistence.greatestdevelopersever.roome.chatroom.ChatActivity;
+import com.inallofexistence.greatestdevelopersever.roome.model.Calendar;
 import com.inallofexistence.greatestdevelopersever.roome.model.User2;
-
-import java.util.ArrayList;
+import com.inallofexistence.greatestdevelopersever.roome.rules.RulesActivity;
+import com.inallofexistence.greatestdevelopersever.roome.shame.ShameActivity;
+import com.inallofexistence.greatestdevelopersever.roome.ledger.LedgerActivity;
+import com.inallofexistence.greatestdevelopersever.roome.shoppinglist.ShoppingListActivity;
+import com.inallofexistence.greatestdevelopersever.roome.calendar.CalendarActivity;
 
 /**
  * Created by quintybox on 3/17/18.
@@ -31,6 +35,9 @@ public class HGMenuFragment extends Fragment implements View.OnClickListener {
     private Button shameButton;
     private Button ruleButton;
     private Button chatButton;
+    private Button calendarButton;
+    private Button ledgerButton;
+    private Button shoppingButton;
     private TextView hgIDField;
 
 
@@ -42,9 +49,15 @@ public class HGMenuFragment extends Fragment implements View.OnClickListener {
         shameButton = v.findViewById(R.id.shameBtn);
         ruleButton = v.findViewById(R.id.rulesBtn);
         chatButton = v.findViewById(R.id.chatBtn);
+        ledgerButton = v.findViewById(R.id.ledgerBtn);
+        calendarButton = v.findViewById(R.id.calendarBtn);
+        shoppingButton = v.findViewById(R.id.shopBtn);
         shameButton.setOnClickListener(this);
         ruleButton.setOnClickListener(this);
         chatButton.setOnClickListener(this);
+        ledgerButton.setOnClickListener(this);
+        shoppingButton.setOnClickListener(this);
+        calendarButton.setOnClickListener(this);
         return v;
     }
 
@@ -98,6 +111,21 @@ public class HGMenuFragment extends Fragment implements View.OnClickListener {
             case R.id.rulesBtn:
                 Intent rulesIntent = new Intent(getActivity(), RulesActivity.class);
                 startActivity(rulesIntent);
+                break;
+
+            case R.id.ledgerBtn:
+                Intent ledgerIntent = new Intent(getActivity(), LedgerActivity.class);
+                startActivity(ledgerIntent);
+                break;
+
+            case R.id.calendarBtn:
+                Intent calIntent = new Intent(getActivity(), CalendarActivity.class);
+                startActivity(calIntent);
+                break;
+
+            case R.id.shopBtn:
+                Intent shopIntent = new Intent(getActivity(), ShoppingListActivity.class);
+                startActivity(shopIntent);
                 break;
         }
     }

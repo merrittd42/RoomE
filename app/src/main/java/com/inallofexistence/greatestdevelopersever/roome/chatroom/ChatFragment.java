@@ -1,4 +1,4 @@
-package com.inallofexistence.greatestdevelopersever.roome;
+package com.inallofexistence.greatestdevelopersever.roome.chatroom;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,12 +9,13 @@ import android.view.ViewGroup;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.inallofexistence.greatestdevelopersever.roome.R;
 
 /**
  * Created by quintybox on 3/17/18.
  */
 
-public class LedgerFragment extends Fragment {
+public class ChatFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_join_create_homegroup, container, false);

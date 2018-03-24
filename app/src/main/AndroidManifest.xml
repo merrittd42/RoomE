@@ -21,14 +21,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ShoppingListActivity" />
+        <activity android:name=".shoppinglist.ShoppingListActivity" />
         <activity android:name=".JoinCreateHomegroupActivity" />
         <activity android:name=".HGMenuActivity" />
-        <activity android:name=".ShameActivity"></activity>
-        <activity android:name=".RulesActivity"></activity>
-        <activity android:name=".ChatActivity"></activity>
-        <activity android:name=".CreateRuleActivity"></activity>
-        <activity android:name=".ViewRuleActivity"></activity>
+        <activity android:name=".shame.ShameActivity"></activity>
+        <activity android:name=".rules.RulesActivity"></activity>
+        <activity android:name=".chatroom.ChatActivity"></activity>
+        <activity android:name=".rules.CreateRuleActivity"></activity>
+        <activity android:name=".rules.ViewRuleActivity"></activity>
+        <activity android:name=".calendar.CalendarActivity"></activity>
+        <activity android:name=".calendar.CreateEventActivity"></activity>
+        <activity android:name=".calendar.ViewEventActivity"></activity>
+        <activity android:name=".ledger.CreateBillActivity"></activity>
+        <activity android:name=".ledger.LedgerActivity"></activity>
+        <activity android:name=".ledger.ViewBillActivity"></activity>
     </application>
 
 </manifest>

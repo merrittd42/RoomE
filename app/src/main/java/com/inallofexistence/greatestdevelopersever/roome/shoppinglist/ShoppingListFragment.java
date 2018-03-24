@@ -1,4 +1,4 @@
-package com.inallofexistence.greatestdevelopersever.roome;
+package com.inallofexistence.greatestdevelopersever.roome.shoppinglist;
 
 import android.app.Fragment;
 import android.graphics.Color;
@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.inallofexistence.greatestdevelopersever.roome.R;
 
 import java.util.ArrayList;
 
