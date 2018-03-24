@@ -73,8 +73,8 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
 
 
         }else if(eventName != null && eventID != null && hgID != null){
-            bundle.putString("eventName", billName);
-            bundle.putString("eventUID", billID);
+            bundle.putString("eventName", eventName);
+            bundle.putString("eventUID", eventID);
             bundle.putString("hgID", hgID);
 
             FragmentManager fm = getSupportFragmentManager();
