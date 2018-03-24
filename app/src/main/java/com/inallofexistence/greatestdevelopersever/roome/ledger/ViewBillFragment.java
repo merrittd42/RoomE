@@ -48,7 +48,7 @@ public class ViewBillFragment extends Fragment implements View.OnClickListener{
 
         deleteButton = v.findViewById(R.id.deleteBillBtn);
         name = v.findViewById(R.id.vBillNameTXT);
-        amount = v.findViewById(R.id.billAmount);
+        amount = v.findViewById(R.id.billAmountTXT);
 
         deleteButton.setOnClickListener(this);
         name.setText(billName);
@@ -70,7 +70,7 @@ public class ViewBillFragment extends Fragment implements View.OnClickListener{
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 Bill tempBill = dataSnapshot.getValue(Bill.class);
-                Log.d("viewBill", tempBill.billName);
+                Log.d("viewBill", String.valueOf(tempBill.billAmount == null));
 
                 amount.setText(Double.toString(tempBill.billAmount));
 

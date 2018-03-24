@@ -32,6 +32,11 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
         String ruleName = intent.getStringExtra("ruleName");
         String ruleUID = intent.getStringExtra("ruleUID");
         String hgID = intent.getStringExtra("hgID");
+        String billID = intent.getStringExtra("billUID");
+        String billName = intent.getStringExtra("billName");
+        String eventID = intent.getStringExtra("eventUID");
+        String eventName = intent.getStringExtra("eventName");
+
         Bundle bundle = new Bundle();
         if(ruleName != null && ruleUID != null && hgID != null) {
 
@@ -50,6 +55,40 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
                         .add(R.id.fragment_container, fragment)
                         .commit();
             }
+        }else if(hgID != null && billID != null && billName != null){
+            bundle.putString("billName", billName);
+            bundle.putString("billUID", billID);
+            bundle.putString("hgID", hgID);
+
+            FragmentManager fm = getSupportFragmentManager();
+            Fragment fragment = fm.findFragmentById(R.id.fragment_container);
+
+            if (fragment == null) {
+                fragment = createFragment();
+                fragment.setArguments(bundle);
+                fm.beginTransaction()
+                        .add(R.id.fragment_container, fragment)
+                        .commit();
+            }
+
+
+        }else if(eventName != null && eventID != null && hgID != null){
+            bundle.putString("eventName", billName);
+            bundle.putString("eventUID", billID);
+            bundle.putString("hgID", hgID);
+
+            FragmentManager fm = getSupportFragmentManager();
+            Fragment fragment = fm.findFragmentById(R.id.fragment_container);
+
+            if (fragment == null) {
+                fragment = createFragment();
+                fragment.setArguments(bundle);
+                fm.beginTransaction()
+                        .add(R.id.fragment_container, fragment)
+                        .commit();
+            }
+
+
         }else{
 
             FragmentManager fm = getSupportFragmentManager();

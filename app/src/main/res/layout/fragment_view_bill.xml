@@ -22,7 +22,7 @@
             android:layout_height="@dimen/fui_field_padding_vert" />
 
         <TextView
-            android:id="@+id/billDescTXT"
+            android:id="@+id/billAmountTXT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />
