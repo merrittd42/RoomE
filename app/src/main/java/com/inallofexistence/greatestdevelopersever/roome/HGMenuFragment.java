@@ -38,6 +38,7 @@ public class HGMenuFragment extends Fragment implements View.OnClickListener {
     private Button calendarButton;
     private Button ledgerButton;
     private Button shoppingButton;
+    private Button signOutButton;
     private TextView hgIDField;
 
 
@@ -52,6 +53,8 @@ public class HGMenuFragment extends Fragment implements View.OnClickListener {
         ledgerButton = v.findViewById(R.id.ledgerBtn);
         calendarButton = v.findViewById(R.id.calendarBtn);
         shoppingButton = v.findViewById(R.id.shopBtn);
+        signOutButton = v.findViewById(R.id.signOutbtn);
+        signOutButton.setOnClickListener(this);
         shameButton.setOnClickListener(this);
         ruleButton.setOnClickListener(this);
         chatButton.setOnClickListener(this);
@@ -127,6 +130,13 @@ public class HGMenuFragment extends Fragment implements View.OnClickListener {
                 Intent shopIntent = new Intent(getActivity(), ShoppingListActivity.class);
                 startActivity(shopIntent);
                 break;
+
+            case R.id.signOutbtn:
+                FirebaseAuth.getInstance().signOut();
+                this.getActivity().finish();
+                break;
+
+            //-L7qP02A2FrpBYVFxmG7
         }
     }
 

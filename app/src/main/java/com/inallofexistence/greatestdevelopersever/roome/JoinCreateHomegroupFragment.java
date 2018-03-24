@@ -87,7 +87,7 @@ public class JoinCreateHomegroupFragment extends Fragment implements View.OnClic
                     public void onDataChange(DataSnapshot dataSnapshot) {
 
                         if(dataSnapshot.hasChild(hgID)){
-                            ArrayList<User2> users = dataSnapshot.child(hgID).child("userList").getValue(ArrayList.class);
+                            ArrayList<User2> users = (ArrayList) dataSnapshot.child(hgID).child("userList").getValue();
                             users.add(userSub2);
                             mDatabase.child("homegroups").child(hgID).child("userList").setValue(users);
 
