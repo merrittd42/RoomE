@@ -20,8 +20,15 @@
             android:gravity="center_horizontal"
             android:text="@string/rules_create" />
 
+        <Button
+            android:id="@+id/shameRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rules_refresh" />
+
         <GridView
             android:id="@+id/shameGrid"
+            android:numColumns="auto_fit"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
