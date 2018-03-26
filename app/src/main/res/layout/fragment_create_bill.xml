@@ -16,16 +16,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Bill Name" />
+            android:hint="Bill Name"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/billAmount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="numberDecimal"
-            android:text="Bill Amount" />
+            android:hint="Bill Amount"
+            android:inputType="numberDecimal" />
 
         <Button
             android:id="@+id/billSubmitBtn"

@@ -28,6 +28,8 @@ import com.inallofexistence.greatestdevelopersever.roome.R;
 import com.inallofexistence.greatestdevelopersever.roome.model.Bill;
 import com.inallofexistence.greatestdevelopersever.roome.model.User2;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -43,6 +45,8 @@ public class ViewBillFragment extends Fragment implements View.OnClickListener{
     private String hgID;
     private String billName;
     private String billID;
+    private String postedBy;
+    private TextView postedByView;
     private ListView listView;
     ArrayList<String> owesList;
     Map<String, String> owesUIDMap;
@@ -64,6 +68,7 @@ public class ViewBillFragment extends Fragment implements View.OnClickListener{
         name = v.findViewById(R.id.vBillNameTXT);
         amount = v.findViewById(R.id.billAmountTXT);
         listView = v.findViewById(R.id.owesList);
+        postedByView = v.findViewById(R.id.postedByTXT);
         //adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, owesList);
         //listView.setAdapter(adapter);
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -77,6 +82,22 @@ public class ViewBillFragment extends Fragment implements View.OnClickListener{
                 Log.d("helpMePlz", tempUser.hgID);
                 hgID = tempUser.hgID;
                 DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+                mDatabase.child("homegroups").child(tempUser.hgID).child("ledger").child(billID).child("postedBy").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        postedBy = dataSnapshot.getValue(String.class);
+                        Log.d("PostedBy?", postedBy);
+                        postedByView.setText(postedBy);
+                }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Log.e("SignIn", "Error when signing in!", databaseError.toException());
+                    }
+
+
+                });
+
                 mDatabase.child("homegroups").child(tempUser.hgID).child("ledger").child(billID).child("stillOwes").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -111,6 +132,7 @@ public class ViewBillFragment extends Fragment implements View.OnClickListener{
                 Log.e("SignIn", "Error when signing in!", databaseError.toException());
             }
         });
+        postedByView.setText(postedBy);
 
         final Context context = this.getContext();
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

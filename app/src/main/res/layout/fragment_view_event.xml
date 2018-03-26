@@ -12,14 +12,22 @@
         android:orientation="vertical">
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Event Name:"
+            android:textAppearance="@android:style/TextAppearance.Material.Body2" />
+
+        <TextView
             android:id="@+id/vEventNameTXT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />
 
-        <Space
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/fui_field_padding_vert" />
+            android:layout_height="wrap_content"
+            android:text= "Event Start Date:"
+            android:textAppearance="@android:style/TextAppearance.Material.Body2" />
 
         <TextView
             android:id="@+id/eventStartDate"
@@ -27,9 +35,11 @@
             android:layout_height="wrap_content"
             android:text="TextView" />
 
-        <Space
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/fui_field_padding_vert" />
+            android:layout_height="wrap_content"
+            android:text="Event Start Time:"
+            android:textAppearance="@android:style/TextAppearance.Material.Body2" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,9 +54,11 @@
             android:layout_height="wrap_content"
             android:text="TextView" />
 
-        <Space
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/fui_field_padding_vert" />
+            android:layout_height="wrap_content"
+            android:text="Event End Date:"
+            android:textAppearance="@android:style/TextAppearance.Material.Body2" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -61,9 +73,11 @@
             android:layout_height="wrap_content"
             android:text="TextView" />
 
-        <Space
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/fui_field_padding_vert" />
+            android:layout_height="wrap_content"
+            android:text="Event End Time:"
+            android:textAppearance="@android:style/TextAppearance.Material.Body2" />
 
         <LinearLayout
             android:layout_width="match_parent"

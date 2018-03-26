@@ -9,7 +9,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bill Name:"
+            android:textAppearance="@android:style/TextAppearance.Material.Body2" />
 
         <TextView
             android:id="@+id/vBillNameTXT"
@@ -17,9 +25,11 @@
             android:layout_height="wrap_content"
             android:text="TextView" />
 
-        <Space
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/fui_field_padding_vert" />
+            android:layout_height="wrap_content"
+            android:text="Bill Amount:"
+            android:textAppearance="@android:style/TextAppearance.Material.Body2" />
 
         <TextView
             android:id="@+id/billAmountTXT"
@@ -27,9 +37,11 @@
             android:layout_height="wrap_content"
             android:text="TextView" />
 
-        <Space
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/fui_field_padding_vert" />
+            android:layout_height="wrap_content"
+            android:text="Posted By:"
+            android:textAppearance="@android:style/TextAppearance.Material.Body2" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,16 +50,29 @@
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/postedByTXT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Still Owes:"
+            android:textAppearance="@android:style/TextAppearance.Material.Body2" />
+
         <ListView
             android:id="@+id/owesList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/deleteBillBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="delete" />
+
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

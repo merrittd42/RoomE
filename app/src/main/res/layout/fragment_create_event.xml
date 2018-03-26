@@ -16,40 +16,40 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Event Name" />
+            android:hint="Event Name"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/startDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="date"
-            android:text="Start Date" />
+            android:hint="Start Date"
+            android:inputType="date" />
 
         <EditText
             android:id="@+id/startTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="time"
-            android:text="Start Time" />
+            android:hint="Start Time"
+            android:inputType="time" />
 
         <EditText
             android:id="@+id/endDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="date"
-            android:text="End Date" />
+            android:hint="End Date"
+            android:inputType="date" />
 
         <EditText
             android:id="@+id/endTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="time"
-            android:text="End Time" />
+            android:hint="End Time"
+            android:inputType="time" />
 
         <Button
             android:id="@+id/eventSubmitBtn"
