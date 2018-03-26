@@ -46,12 +46,32 @@ public class ViewEventFragment extends Fragment implements View.OnClickListener{
         View v = inflater.inflate(R.layout.fragment_view_event, container, false);
         Bundle bundle = this.getArguments();
         eventName = bundle.getString("eventName");
-        eventEndDate = bundle.getString("eventEndDate");
-        eventEndTime = bundle.getString("eventEndTime");
-        eventStartDate = bundle.getString("eventStartDate");
-        eventStartTime = bundle.getString("eventStartTime");
+
         eventID = bundle.getString("eventUID");
         hgID = bundle.getString("hgID");
+
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.child("homegroups").child(hgID).child("calendar").child(eventID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                Event tempEvent = dataSnapshot.getValue(Event.class);
+                Log.d("viewEvent", String.valueOf(tempEvent.startTime == null));
+
+                startTime.setText(tempEvent.startTime);
+                startDate.setText(tempEvent.startDate);
+                endTime.setText(tempEvent.endTime);
+                endDate.setText(tempEvent.endDate);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e("SignIn", "Error when signing in!", databaseError.toException());
+            }
+        });
+
+
 
         Log.d("Intent test", eventName);
 

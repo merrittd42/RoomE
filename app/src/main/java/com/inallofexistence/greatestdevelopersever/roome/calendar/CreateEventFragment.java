@@ -82,7 +82,7 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
                         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
                         event = new Event(eventNameView.getText().toString(), eventStartDateView.getText().toString(),
                                 eventStartTimeView.getText().toString(), eventEndDateView.getText().toString(),
-                                eventStartTimeView.getText().toString(), null);
+                                eventEndTimeView.getText().toString(), null);
 
                         String eventUID = mDatabase.child("homegroups").child(tempUser.hgID).child("calendar").push().getKey();
                         event.UID = eventUID;

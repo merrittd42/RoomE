@@ -73,33 +73,36 @@ public class CreateBillFragment extends Fragment implements View.OnClickListener
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
 
-                        User2 tempUser = dataSnapshot.getValue(User2.class);
+                        final User2 tempUser = dataSnapshot.getValue(User2.class);
                         Log.d("helpMePlz", tempUser.hgID);
 
-                        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+                        final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                        String username = user.getDisplayName();
+                        final String username = user.getDisplayName();
                         final List<String> stillOwes = new ArrayList<String>();
-                        FirebaseDatabase.getInstance().getReference().child("users")
+                        FirebaseDatabase.getInstance().getReference().child("homegroups").child(tempUser.hgID).child("userList")
                                 .addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                                             User2 user = snapshot.getValue(User2.class);
                                             stillOwes.add(user.email);
+                                            Log.d("viewBillD", "Adding user " + user.email);
                                         }
+                                        stillOwes.remove(username);
+                                        bill = new Bill(billNameView.getText().toString(), Double.parseDouble(
+                                                billAmountView.getText().toString()), username, stillOwes ,null);
+                                        Log.d("viewBillD", stillOwes.toString());
+
+                                        String billUID = mDatabase.child("homegroups").child(tempUser.hgID).child("ledger").push().getKey();
+                                        bill.UID = billUID;
+                                        mDatabase.child("homegroups").child(tempUser.hgID).child("ledger").child(billUID).setValue(bill);
                                     }
                                     @Override
                                     public void onCancelled(DatabaseError databaseError) {
                                     }
                                 });
-                        stillOwes.remove(username);
-                        bill = new Bill(billNameView.getText().toString(), Double.parseDouble(
-                                billAmountView.getText().toString()), username, stillOwes ,null);
 
-                        String billUID = mDatabase.child("homegroups").child(tempUser.hgID).child("ledger").push().getKey();
-                        bill.UID = billUID;
-                        mDatabase.child("homegroups").child(tempUser.hgID).child("ledger").child(billUID).setValue(bill);
 
 
                     }
