@@ -37,6 +37,7 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
         String eventID = intent.getStringExtra("eventUID");
         String eventName = intent.getStringExtra("eventName");
         String shameUID = intent.getStringExtra("shameUID");
+        String chatFlag = intent.getStringExtra("chatFlag");
 
         Bundle bundle = new Bundle();
         if(ruleName != null && ruleUID != null && hgID != null) {
@@ -92,6 +93,19 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
 
         }else if(shameUID != null && hgID != null){
             bundle.putString("shameUID", shameUID);
+            bundle.putString("hgID", hgID);
+
+            FragmentManager fm = getSupportFragmentManager();
+            Fragment fragment = fm.findFragmentById(R.id.fragment_container);
+
+            if (fragment == null) {
+                fragment = createFragment();
+                fragment.setArguments(bundle);
+                fm.beginTransaction()
+                        .add(R.id.fragment_container, fragment)
+                        .commit();
+            }
+        }else if(chatFlag != null){
             bundle.putString("hgID", hgID);
 
             FragmentManager fm = getSupportFragmentManager();

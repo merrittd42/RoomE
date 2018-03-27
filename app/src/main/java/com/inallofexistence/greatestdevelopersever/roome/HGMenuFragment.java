@@ -40,6 +40,7 @@ public class HGMenuFragment extends Fragment implements View.OnClickListener {
     private Button shoppingButton;
     private Button signOutButton;
     private TextView hgIDField;
+    private String hgID;
 
 
 
@@ -78,6 +79,7 @@ public class HGMenuFragment extends Fragment implements View.OnClickListener {
                 User2 tempUser = dataSnapshot.getValue(User2.class);
                 Log.d("helpMePlz", tempUser.hgID);
                 hgIDField.setText("Homegroup ID is: " + tempUser.hgID);
+                hgID = tempUser.hgID;
 
             }
 
@@ -108,6 +110,8 @@ public class HGMenuFragment extends Fragment implements View.OnClickListener {
 
             case R.id.chatBtn:
                 Intent chatIntent = new Intent(getActivity(), ChatActivity.class);
+                chatIntent.putExtra("hgID", hgID);
+                chatIntent.putExtra("chatFlag", "Hey, if you read this line, you're really cool. I really appreciate you reading this code. Good for you B)");
                 startActivity(chatIntent);
                 break;
 

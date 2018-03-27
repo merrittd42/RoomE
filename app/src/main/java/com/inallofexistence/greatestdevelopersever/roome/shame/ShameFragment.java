@@ -141,8 +141,8 @@ public class ShameFragment extends Fragment implements View.OnClickListener {
         switch(v.getId()){
 
             case R.id.createShameBtn:
-                Intent rulesIntent = new Intent(getActivity(), CreateInfractionActivity.class);
-                startActivity(rulesIntent);
+                Intent infractionIntent = new Intent(getActivity(), CreateInfractionActivity.class);
+                startActivity(infractionIntent);
                 break;
 
             case R.id.shameRefresh:
