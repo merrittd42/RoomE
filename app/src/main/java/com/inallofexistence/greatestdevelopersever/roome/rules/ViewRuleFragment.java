@@ -140,7 +140,7 @@ public class ViewRuleFragment extends Fragment implements View.OnClickListener{
                                 String numOfSup = supporters.getText().toString();
                                 Integer intOfSup = Integer.parseInt(numOfSup.substring(numOfSup.lastIndexOf(" ") + 1));
                                 intOfSup++;
-                                supporters.setText(String.valueOf(intOfSup));
+                                supporters.setText("Supporting users: " + String.valueOf(intOfSup));
 
                                 mDatabase.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
 
@@ -166,7 +166,7 @@ public class ViewRuleFragment extends Fragment implements View.OnClickListener{
                             String numOfSup = supporters.getText().toString();
                             Integer intOfSup = Integer.parseInt(numOfSup.substring(numOfSup.lastIndexOf(" ") + 1));
                             intOfSup++;
-                            supporters.setText(String.valueOf(intOfSup));
+                            supporters.setText("Supporting users: " + String.valueOf(intOfSup));
 
                             mDatabase.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
 
@@ -219,7 +219,7 @@ public class ViewRuleFragment extends Fragment implements View.OnClickListener{
                                 String numOfSup = supporters.getText().toString();
                                 Integer intOfSup = Integer.parseInt(numOfSup.substring(numOfSup.lastIndexOf(" ") + 1));
                                 intOfSup--;
-                                supporters.setText(String.valueOf(intOfSup));
+                                supporters.setText("Supporting users: " + String.valueOf(intOfSup));
                                 tempRule.yesVoters.remove(indexOfRemoval);
                                 mDatabase2.child("homegroups").child(hgID).child("rules").child(ruleID).setValue(tempRule);
                             }
