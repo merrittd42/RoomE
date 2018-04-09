@@ -106,7 +106,7 @@ public class ViewInfractionFragment extends Fragment implements View.OnClickList
     public void onClick(View v){
         switch (v.getId()){
 
-            case R.id.deleteRuleBtn:
+            case R.id.deleteShameBtn:
                 final DatabaseReference mDatabase3 = FirebaseDatabase.getInstance().getReference();
                 mDatabase3.child("homegroups").child(hgID).child("infraction").child(shameUID).setValue(null);
                 getActivity().finish();
