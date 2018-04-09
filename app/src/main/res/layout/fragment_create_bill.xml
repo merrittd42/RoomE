@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Bill Name"
+            android:hint="@string/bills_name"
             android:inputType="textPersonName" />
 
         <EditText
@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Bill Amount"
+            android:hint="@string/bills_amount"
             android:inputType="numberDecimal" />
 
         <Button

@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_name">RoomE</string>
+    <string name="title_activity_login">Einloggen</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Passwort (wahlweise)</string>
+    <string name="action_sign_in">Einloggen oder Registrieren</string>
+    <string name="action_sign_in_short">Einloggen</string>
+    <string name="error_invalid_email">Diese E-Mail-Adresse ist ungültig</string>
+    <string name="error_invalid_password">Dieses Passwort ist zu kurz</string>
+    <string name="error_incorrect_password">Dieses Passwort ist fehlerhaft</string>
+    <string name="error_field_required">Dieses Feld wird benötigt</string>
+    <string name="permission_rationale">"Für die Bereitstellung von E-Mails sind Kontakteberechtigungen erforderlich
+         Fertigstellungen."
+    </string>
+
+    <!--
+        Homegroup Join Strings
+    -->
+    <string name ="hg_join_instruction">Bitte fügen Sie die ID der HomeGroup ID, der Sie beitreten möchten, in das Feld unten ein oder erstellen Sie eine neue HomeGroup!</string>
+    <string name="hg_join_join">Beitreten!</string>
+    <string name="hg_join_create">HomeGroup erstellen!</string>
+    <string name ="hg_join_textField">HomeGroup ID</string>
+    <string name ="hg_join_OR">ODER</string>
+
+    <!--
+        HomeGroup Menu Strings
+    -->
+
+    <string name ="hg_menu_calendar">Kalender</string>
+    <string name ="hg_menu_ledger">Hauptbuch</string>
+    <string name ="hg_menu_shame">Wand der Schande</string>
+    <string name ="hg_menu_chat">Chat-Raum</string>
+    <string name ="hg_menu_rules">Hausregeln</string>
+    <string name ="hg_menu_shop">Einkaufsliste</string>
+    <!--
+        Rules Menu Strings
+    -->
+
+    <string name ="rules_create">Erstellen</string>
+    <string name ="rules_refresh">Aktualisierung</string>
+
+    <!--
+        Create Rule Strings
+    -->
+
+    <string name ="rules_ruleName">Regelname</string>
+    <string name ="rules_RuleContent">Regelinhalt</string>
+    <string name ="rules_RuleSubmit">Einreichen</string>
+
+    <!--
+        View Rule Strings
+    -->
+
+    <string name ="rules_upVote">Ja!</string>
+    <string name ="rules_downVote">Nein!</string>
+    <string name ="rules_delete">Löschen</string>
+
+    <!--
+    Ledger Strings
+    -->
+
+    <string name="bills_delete">Löschen</string>
+    <string name="bills_still_owes">Immer noch:</string>
+    <string name="bills_bill_name">Rechnername:</string>
+    <string name="bills_bill_amount">Rechnungsbetrag:</string>
+    <string name="bills_posted_by">Geschrieben von:</string>
+    <string name="bills_name">Rechnername</string>
+    <string name="bills_amount">Rechnungsbetrag</string>
+    <string name="bills_paid">Haben sie ihren Teil der Rechnung bezahlt?</string>
+
+
+    <!--
+    Shopping List Strings
+    -->
+    <string name="shopping_list_item_name">Artikelname:</string>
+
+    <!--
+    Calendar Strings
+    -->
+    <string name="calendar_event_name">Veranstaltungsname:</string>
+    <string name="calendar_event_start_date">Anfangsdatum</string>
+    <string name="calendar_event_start_time">Startzeit:</string>
+    <string name="calendar_event_end_date">Enddatum:</string>
+    <string name="calendar_event_end_time">Endzeit:</string>
+    <string name="calendar_delete">löschen</string>
+
+
+
+</resources>

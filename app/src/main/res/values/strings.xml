@@ -57,5 +57,35 @@
     <string name ="rules_downVote">Nay!</string>
     <string name ="rules_delete">Delete</string>
 
+    <!--
+    Ledger Strings
+    -->
+
+    <string name="bills_delete">delete</string>
+    <string name="bills_still_owes">Still Owes:</string>
+    <string name="bills_bill_name">Bill Name:</string>
+    <string name="bills_bill_amount">Bill Amount:</string>
+    <string name="bills_posted_by">Posted By:</string>
+    <string name="bills_name">Bill Name</string>
+    <string name="bills_amount">Bill Amount</string>
+    <string name="bills_paid">Did they pay their share of the bill?</string>
+
+
+    <!--
+    Shopping List Strings
+    -->
+    <string name="shopping_list_item_name">Item Name:</string>
+
+    <!--
+    Calendar Strings
+    -->
+    <string name="calendar_event_name">Event Name:</string>
+    <string name="calendar_event_start_date">Event Start Date:</string>
+    <string name="calendar_event_start_time">Event Start Time:</string>
+    <string name="calendar_event_end_date">Event End Date:</string>
+    <string name="calendar_event_end_time">Event End Time:</string>
+    <string name="calendar_delete">delete</string>
+
+
 
 </resources>

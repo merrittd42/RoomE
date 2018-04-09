@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Event Name:"
+            android:text="@string/calendar_event_name"
             android:textAppearance="@android:style/TextAppearance.Material.Body2" />
 
         <TextView
@@ -26,7 +26,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text= "Event Start Date:"
+            android:text= "@string/calendar_event_start_date"
             android:textAppearance="@android:style/TextAppearance.Material.Body2" />
 
         <TextView
@@ -38,7 +38,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Event Start Time:"
+            android:text="@string/calendar_event_start_time"
             android:textAppearance="@android:style/TextAppearance.Material.Body2" />
 
         <LinearLayout
@@ -57,7 +57,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Event End Date:"
+            android:text="@string/calendar_event_end_date"
             android:textAppearance="@android:style/TextAppearance.Material.Body2" />
 
         <LinearLayout
@@ -76,7 +76,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Event End Time:"
+            android:text="@string/calendar_event_end_time"
             android:textAppearance="@android:style/TextAppearance.Material.Body2" />
 
         <LinearLayout
@@ -96,7 +96,7 @@
             android:id="@+id/deleteEventBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="delete" />
+            android:text="@string/calendar_delete" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

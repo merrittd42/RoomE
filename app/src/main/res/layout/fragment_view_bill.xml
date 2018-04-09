@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Bill Name:"
+            android:text="@string/bills_bill_name"
             android:textAppearance="@android:style/TextAppearance.Material.Body2" />
 
         <TextView
@@ -28,7 +28,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Bill Amount:"
+            android:text="@string/bills_bill_amount"
             android:textAppearance="@android:style/TextAppearance.Material.Body2" />
 
         <TextView
@@ -40,7 +40,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Posted By:"
+            android:text="@string/bills_posted_by"
             android:textAppearance="@android:style/TextAppearance.Material.Body2" />
 
         <LinearLayout
@@ -59,7 +59,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Still Owes:"
+            android:text="@string/bills_still_owes"
             android:textAppearance="@android:style/TextAppearance.Material.Body2" />
 
         <ListView
@@ -71,7 +71,7 @@
             android:id="@+id/deleteBillBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="delete" />
+            android:text="@string/bills_delete" />
 
 
     </LinearLayout>

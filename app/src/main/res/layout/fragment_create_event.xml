@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Event Name"
+            android:hint="@string/calendar_event_name"
             android:inputType="textPersonName" />
 
         <EditText
@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Start Date"
+            android:hint="@string/calendar_event_start_date"
             android:inputType="date" />
 
         <EditText
@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Start Time"
+            android:hint="@string/calendar_event_start_time"
             android:inputType="time" />
 
         <EditText
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="End Date"
+            android:hint="@string/calendar_event_end_date"
             android:inputType="date" />
 
         <EditText
@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="End Time"
+            android:hint="@string/calendar_event_end_time"
             android:inputType="time" />
 
         <Button
