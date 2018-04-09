@@ -60,6 +60,7 @@ public class CreateInfractionFragment extends Fragment implements View.OnClickLi
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_create_infraction, container, false);
+        getActivity().setTitle("Put the blame on 'em!");
         infractionNameView = v.findViewById(R.id.infractionNameTXT);
         infractionContentView = v.findViewById(R.id.infractionContentTXT);
         mImageView = v.findViewById(R.id.inImage);

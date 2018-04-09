@@ -75,6 +75,7 @@ public class ViewRuleFragment extends Fragment implements View.OnClickListener{
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+
         Log.d("viewRule", ruleID);
         Log.d("viewRule", hgID);
         mDatabase.child("homegroups").child(hgID).child("rules").child(ruleID).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -83,6 +84,7 @@ public class ViewRuleFragment extends Fragment implements View.OnClickListener{
 
                 Rule tempRule = dataSnapshot.getValue(Rule.class);
                 Log.d("viewRule", tempRule.ruleName);
+                getActivity().setTitle(tempRule.ruleName);
 
                 desc.setText(tempRule.ruleContent);
                 String userList = "Supporting users: 0";

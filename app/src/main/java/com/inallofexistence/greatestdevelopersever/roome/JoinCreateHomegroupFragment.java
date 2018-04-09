@@ -51,7 +51,7 @@ public class JoinCreateHomegroupFragment extends Fragment implements View.OnClic
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_join_create_homegroup, container, false);
-
+        getActivity().setTitle("Join Your Group!");
         joinButton = v.findViewById(R.id.submitBtn);
         createButton = v.findViewById(R.id.createHG);
         hgIDEnter = v.findViewById(R.id.hgIDtxt);

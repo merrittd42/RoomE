@@ -49,7 +49,11 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
         View v = inflater.inflate(R.layout.fragment_calendar, container, false);
         createButton = v.findViewById(R.id.createEventBtn);
         refreshButton = v.findViewById(R.id.refreshCalendarBtn);
+        getActivity().setTitle("Here's What's Going On!");
+
         listView = v.findViewById(R.id.calendar);
+        Bundle bundle = this.getArguments();
+        hgID = bundle.getString("hgID");
         createButton.setOnClickListener(this);
         refreshButton.setOnClickListener(this);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -92,16 +96,9 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
 
             case R.id.refreshCalendarBtn:
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-                mDatabase.child("users").child(user.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
 
-                        User2 tempUser = dataSnapshot.getValue(User2.class);
-                        Log.d("helpMePlz", tempUser.hgID);
-                        hgID = tempUser.hgID;
                         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-                        mDatabase.child("homegroups").child(tempUser.hgID).child("calendar").addListenerForSingleValueEvent(new ValueEventListener() {
+                        mDatabase.child("homegroups").child(hgID).child("calendar").addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
                                 Log.d("helpMePlz", "Got event reference!");
@@ -136,13 +133,6 @@ public class CalendarFragment extends Fragment implements View.OnClickListener {
                         });
 
 
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                        Log.e("SignIn", "Error when signing in!", databaseError.toException());
-                    }
-                });
 
                 break;
 

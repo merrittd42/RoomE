@@ -47,6 +47,7 @@ public class HGMenuFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_hgmenu, container, false);
+        getActivity().setTitle("Main Menu");
         hgIDField = v.findViewById(R.id.hgIDTXT);
         shameButton = v.findViewById(R.id.shameBtn);
         ruleButton = v.findViewById(R.id.rulesBtn);
@@ -105,6 +106,9 @@ public class HGMenuFragment extends Fragment implements View.OnClickListener {
 
             case R.id.shameBtn:
                 Intent shameIntent = new Intent(getActivity(), ShameActivity.class);
+                shameIntent.putExtra("hgID", hgID);
+                shameIntent.putExtra("shameFlag", "Hey, if you read this line, you're really cool. I really appreciate you reading this code. Good for you B)");
+
                 startActivity(shameIntent);
                 break;
 
@@ -117,21 +121,31 @@ public class HGMenuFragment extends Fragment implements View.OnClickListener {
 
             case R.id.rulesBtn:
                 Intent rulesIntent = new Intent(getActivity(), RulesActivity.class);
+                rulesIntent.putExtra("ruleFlag", "This one too man");
+                rulesIntent.putExtra("hgID", hgID);
                 startActivity(rulesIntent);
                 break;
 
             case R.id.ledgerBtn:
                 Intent ledgerIntent = new Intent(getActivity(), LedgerActivity.class);
+                ledgerIntent.putExtra("hgID", hgID);
+                ledgerIntent.putExtra("billFlag", "Hey, if you read this line, you're really cool. I really appreciate you reading this code. Good for you B)");
+
                 startActivity(ledgerIntent);
                 break;
 
             case R.id.calendarBtn:
                 Intent calIntent = new Intent(getActivity(), CalendarActivity.class);
+                calIntent.putExtra("hgID", hgID);
+                calIntent.putExtra("eventFlag", "Hey, if you read this line, you're really cool. I really appreciate you reading this code. Good for you B)");
+
                 startActivity(calIntent);
                 break;
 
             case R.id.shopBtn:
                 Intent shopIntent = new Intent(getActivity(), ShoppingListActivity.class);
+                shopIntent.putExtra("hgID", hgID);
+                shopIntent.putExtra("shopFlag", "Hey, if you read this line, you're really cool. I really appreciate you reading this code. Good for you B)");
                 startActivity(shopIntent);
                 break;
 

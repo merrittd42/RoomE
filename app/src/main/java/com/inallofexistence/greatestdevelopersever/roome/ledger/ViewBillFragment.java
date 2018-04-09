@@ -188,6 +188,8 @@ public class ViewBillFragment extends Fragment implements View.OnClickListener{
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 Bill tempBill = dataSnapshot.getValue(Bill.class);
+                getActivity().setTitle(tempBill.billName);
+
                 Log.d("viewBill", String.valueOf(tempBill.billAmount == null));
 
                 amount.setText(Double.toString(tempBill.billAmount));

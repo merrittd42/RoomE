@@ -38,6 +38,8 @@ public class CreateBillFragment extends Fragment implements View.OnClickListener
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_create_bill, container, false);
         billNameView = v.findViewById(R.id.billNameTXT);
+        getActivity().setTitle("Charge 'em!");
+
         billAmountView = v.findViewById(R.id.billAmount);
         submitButton = v.findViewById(R.id.billSubmitBtn);
         submitButton.setOnClickListener(this);

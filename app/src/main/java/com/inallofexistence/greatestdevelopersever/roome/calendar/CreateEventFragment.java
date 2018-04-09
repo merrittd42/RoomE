@@ -43,6 +43,8 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
         eventStartDateView = v.findViewById(R.id.startDate);
         eventEndDateView = v.findViewById(R.id.endDate);
         submitButton = v.findViewById(R.id.eventSubmitBtn);
+        getActivity().setTitle("It's A Date!");
+
         submitButton.setOnClickListener(this);
 
         return v;

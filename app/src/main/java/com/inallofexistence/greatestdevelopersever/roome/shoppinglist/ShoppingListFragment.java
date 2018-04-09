@@ -49,8 +49,12 @@ public class ShoppingListFragment extends Fragment implements View.OnClickListen
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_shoppinglist, container, false);
         createButton = v.findViewById(R.id.createItemBtn);
+        getActivity().setTitle("Shopping List");
+
         refreshButton = v.findViewById(R.id.refreshShoppinglistBtn);
         listView = v.findViewById(R.id.shoppinglist);
+        Bundle bundle = this.getArguments();
+        hgID = bundle.getString("hgID");
         createButton.setOnClickListener(this);
         refreshButton.setOnClickListener(this);
         final Context context = this.getContext();
@@ -127,16 +131,9 @@ public class ShoppingListFragment extends Fragment implements View.OnClickListen
 
             case R.id.refreshShoppinglistBtn:
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-                mDatabase.child("users").child(user.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
 
-                        User2 tempUser = dataSnapshot.getValue(User2.class);
-                        Log.d("helpMePlz", tempUser.hgID);
-                        hgID = tempUser.hgID;
                         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-                        mDatabase.child("homegroups").child(tempUser.hgID).child("shoppingList").addListenerForSingleValueEvent(new ValueEventListener() {
+                        mDatabase.child("homegroups").child(hgID).child("shoppingList").addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
                                 Log.d("helpMePlz", "Got item reference!");
@@ -164,13 +161,6 @@ public class ShoppingListFragment extends Fragment implements View.OnClickListen
                         });
 
 
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                        Log.e("SignIn", "Error when signing in!", databaseError.toException());
-                    }
-                });
 
                 break;
 

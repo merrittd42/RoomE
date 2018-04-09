@@ -30,7 +30,7 @@
                 android:layout_weight="4"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="@string/hg_join_textField" />
+                android:hint="@string/hg_join_textField" />
 
             <Button
                 android:id="@+id/submitBtn"

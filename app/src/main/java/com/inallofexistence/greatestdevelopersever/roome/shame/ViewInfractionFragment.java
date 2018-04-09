@@ -44,6 +44,7 @@ public class ViewInfractionFragment extends Fragment implements View.OnClickList
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_view_infraction, container, false);
         Bundle bundle = this.getArguments();
+
         shameUID = bundle.getString("shameUID");
         hgID = bundle.getString("hgID");
 
@@ -71,6 +72,7 @@ public class ViewInfractionFragment extends Fragment implements View.OnClickList
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 Infraction tempShame = dataSnapshot.getValue(Infraction.class);
+                getActivity().setTitle(tempShame.name);
 
                 name.setText(tempShame.name);
                 desc.setText(tempShame.description);

@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/rules_ruleName" />
+            android:hint="@string/rules_ruleName" />
 
         <EditText
             android:id="@+id/ruleContentTXT"
@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textMultiLine"
-            android:text="@string/rules_RuleContent" />
+            android:hint="@string/rules_RuleContent" />
 
         <Button
             android:id="@+id/ruleSubmitBtn"

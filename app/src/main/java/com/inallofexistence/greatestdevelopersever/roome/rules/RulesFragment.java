@@ -45,10 +45,14 @@ public class RulesFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_rules_list, container, false);
+        getActivity().setTitle("The Lawbook");
+
         createButton = v.findViewById(R.id.createRulesBtn);
         refreshButton = v.findViewById(R.id.refreshRulesBtn);
         listView = v.findViewById(R.id.ruleList);
         createButton.setOnClickListener(this);
+        Bundle bundle = this.getArguments();
+        hgID = bundle.getString("hgID");
         refreshButton.setOnClickListener(this);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -91,15 +95,8 @@ public class RulesFragment extends Fragment implements View.OnClickListener {
             case R.id.refreshRulesBtn:
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-                mDatabase.child("users").child(user.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
 
-                        User2 tempUser = dataSnapshot.getValue(User2.class);
-                        Log.d("helpMePlz", tempUser.hgID);
-                        hgID = tempUser.hgID;
-                        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-                        mDatabase.child("homegroups").child(tempUser.hgID).child("rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                        mDatabase.child("homegroups").child(hgID).child("rules").addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
                                 Log.d("helpMePlz", "Got rule reference!");
@@ -134,13 +131,7 @@ public class RulesFragment extends Fragment implements View.OnClickListener {
                         });
 
 
-                    }
 
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                        Log.e("SignIn", "Error when signing in!", databaseError.toException());
-                    }
-                });
 
                 break;
 

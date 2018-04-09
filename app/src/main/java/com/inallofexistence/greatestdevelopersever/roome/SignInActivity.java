@@ -1,6 +1,7 @@
 package com.inallofexistence.greatestdevelopersever.roome;
 
 import android.content.Intent;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,7 +27,6 @@ public class SignInActivity extends AppCompatActivity {
     @Override
     protected void onStart(){
         super.onStart();
-
         FirebaseAuth auth = FirebaseAuth.getInstance();
         if (auth.getCurrentUser() != null) {
             //User2 either never joined/created a group, or has a group
@@ -38,6 +38,7 @@ public class SignInActivity extends AppCompatActivity {
                     AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(Arrays.asList(new AuthUI.IdpConfig.EmailBuilder().build(), new AuthUI.IdpConfig.GoogleBuilder().build())).build(),
                     RC_SIGN_IN);
         }
+
 
     }
 
@@ -72,6 +73,7 @@ public class SignInActivity extends AppCompatActivity {
 
     private void redirectToHGCreationOrHGMenu(){
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

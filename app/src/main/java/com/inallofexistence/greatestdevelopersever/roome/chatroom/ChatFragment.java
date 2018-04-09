@@ -33,6 +33,8 @@ public class ChatFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_chat, container, false);
         final EditText input = v.findViewById(R.id.input);
+        getActivity().setTitle("HouseChat™®©");
+
         Bundle bundle = this.getArguments();
         hgID = bundle.getString("hgID");
         FloatingActionButton fab =

@@ -47,11 +47,14 @@ public class ShameFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_shame, container, false);
+        getActivity().setTitle("WALL OF SHAME!");
         createButton = v.findViewById(R.id.createShameBtn);
         createButton.setOnClickListener(this);
         refreshButton = v.findViewById(R.id.shameRefresh);
         refreshButton.setOnClickListener(this);
         infracUIDList = new ArrayList<>();
+        Bundle bundle = this.getArguments();
+        hgID = bundle.getString("hgID");
         gridView = (GridView) v.findViewById(R.id.shameGrid);
         gridAdapter = new GridViewAdapter(this.getActivity(), getData());
         gridView.setAdapter(gridAdapter);
@@ -78,16 +81,9 @@ public class ShameFragment extends Fragment implements View.OnClickListener {
         final ArrayList<String> names = new ArrayList<>();
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-        mDatabase.child("users").child(user.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
 
-                User2 tempUser = dataSnapshot.getValue(User2.class);
-                Log.d("helpMePlz", tempUser.hgID);
-                hgID = tempUser.hgID;
                 DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-                mDatabase.child("homegroups").child(tempUser.hgID).child("infractions").addListenerForSingleValueEvent(new ValueEventListener() {
+                mDatabase.child("homegroups").child(hgID).child("infractions").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
 
@@ -96,7 +92,6 @@ public class ShameFragment extends Fragment implements View.OnClickListener {
                             Infraction tempInfraction = postSnapshot.getValue(Infraction.class);
                             urls.add(tempInfraction.photoLoc);
                             names.add(tempInfraction.name);
-                            Log.d("IMAGEHELP", tempInfraction.photoLoc);
                             infracUIDList.add(tempInfraction.UID);
                         }
                     }
@@ -108,13 +103,9 @@ public class ShameFragment extends Fragment implements View.OnClickListener {
                 });
 
 
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.e("SignIn", "Error when signing in!", databaseError.toException());
-            }
-        });
+
+
         return new ImageItem(urls, names);
     }
 

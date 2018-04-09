@@ -6,6 +6,7 @@ import android.support.annotation.LayoutRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 
 public abstract class SingleFragmentActivity extends AppCompatActivity {
@@ -38,6 +39,16 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
         String eventName = intent.getStringExtra("eventName");
         String shameUID = intent.getStringExtra("shameUID");
         String chatFlag = intent.getStringExtra("chatFlag");
+        String ruleFlag = intent.getStringExtra("ruleFlag");
+        String eventFlag = intent.getStringExtra("eventFlag");
+        String shameFlag = intent.getStringExtra("shameFlag");
+        String billFlag = intent.getStringExtra("billFlag");
+        String shopFlag = intent.getStringExtra("shopFlag");
+
+
+
+
+
 
         Bundle bundle = new Bundle();
         if(ruleName != null && ruleUID != null && hgID != null) {
@@ -118,8 +129,75 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
                         .add(R.id.fragment_container, fragment)
                         .commit();
             }
-        }else{
+        }else if(ruleFlag != null){
+            bundle.putString("hgID", hgID);
 
+            FragmentManager fm = getSupportFragmentManager();
+            Fragment fragment = fm.findFragmentById(R.id.fragment_container);
+
+            if (fragment == null) {
+                fragment = createFragment();
+                fragment.setArguments(bundle);
+                fm.beginTransaction()
+                        .add(R.id.fragment_container, fragment)
+                        .commit();
+            }
+        }else if(shameFlag != null){
+            bundle.putString("hgID", hgID);
+            Log.d("WHAT", hgID);
+
+            FragmentManager fm = getSupportFragmentManager();
+            Fragment fragment = fm.findFragmentById(R.id.fragment_container);
+
+            if (fragment == null) {
+                fragment = createFragment();
+                fragment.setArguments(bundle);
+                fm.beginTransaction()
+                        .add(R.id.fragment_container, fragment)
+                        .commit();
+            }
+        }else if(eventFlag != null){
+            bundle.putString("hgID", hgID);
+
+            FragmentManager fm = getSupportFragmentManager();
+            Fragment fragment = fm.findFragmentById(R.id.fragment_container);
+
+            if (fragment == null) {
+                fragment = createFragment();
+                fragment.setArguments(bundle);
+                fm.beginTransaction()
+                        .add(R.id.fragment_container, fragment)
+                        .commit();
+            }
+        }else if(billFlag != null){
+
+            bundle.putString("hgID", hgID);
+
+            FragmentManager fm = getSupportFragmentManager();
+            Fragment fragment = fm.findFragmentById(R.id.fragment_container);
+
+            if (fragment == null) {
+                fragment = createFragment();
+                fragment.setArguments(bundle);
+                fm.beginTransaction()
+                        .add(R.id.fragment_container, fragment)
+                        .commit();
+            }
+        }else if(shopFlag != null){
+
+            bundle.putString("hgID", hgID);
+
+            FragmentManager fm = getSupportFragmentManager();
+            Fragment fragment = fm.findFragmentById(R.id.fragment_container);
+
+            if (fragment == null) {
+                fragment = createFragment();
+                fragment.setArguments(bundle);
+                fm.beginTransaction()
+                        .add(R.id.fragment_container, fragment)
+                        .commit();
+            }
+        }else{
             FragmentManager fm = getSupportFragmentManager();
             Fragment fragment = fm.findFragmentById(R.id.fragment_container);
 

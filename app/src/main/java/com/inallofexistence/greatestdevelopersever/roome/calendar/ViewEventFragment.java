@@ -57,6 +57,7 @@ public class ViewEventFragment extends Fragment implements View.OnClickListener{
 
                 Event tempEvent = dataSnapshot.getValue(Event.class);
                 Log.d("viewEvent", String.valueOf(tempEvent.startTime == null));
+                getActivity().setTitle(tempEvent.eventName);
 
                 startTime.setText(tempEvent.startTime);
                 startDate.setText(tempEvent.startDate);

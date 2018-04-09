@@ -46,8 +46,12 @@ public class LedgerFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_ledger, container, false);
         createButton = v.findViewById(R.id.createBillBtn);
+        getActivity().setTitle("What everyone owes");
+
         refreshButton = v.findViewById(R.id.refreshLedgerBtn);
         listView = v.findViewById(R.id.ledger);
+        Bundle bundle = this.getArguments();
+        hgID = bundle.getString("hgID");
         createButton.setOnClickListener(this);
         refreshButton.setOnClickListener(this);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -91,15 +95,8 @@ public class LedgerFragment extends Fragment implements View.OnClickListener {
             case R.id.refreshLedgerBtn:
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-                mDatabase.child("users").child(user.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
 
-                        User2 tempUser = dataSnapshot.getValue(User2.class);
-                        Log.d("helpMePlz", tempUser.hgID);
-                        hgID = tempUser.hgID;
-                        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-                        mDatabase.child("homegroups").child(tempUser.hgID).child("ledger").addListenerForSingleValueEvent(new ValueEventListener() {
+                        mDatabase.child("homegroups").child(hgID).child("ledger").addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
                                 Log.d("helpMePlz", "Got bill reference!");
@@ -134,13 +131,8 @@ public class LedgerFragment extends Fragment implements View.OnClickListener {
                         });
 
 
-                    }
 
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                        Log.e("SignIn", "Error when signing in!", databaseError.toException());
-                    }
-                });
+
 
                 break;
 

@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Infraction Name" />
+            android:hint="Infraction Name" />
 
         <EditText
             android:id="@+id/infractionContentTXT"
@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textMultiLine"
-            android:text="Infraction Description" />
+            android:hint="Infraction Description" />
 
         <ImageView
             android:id="@+id/inImage"
