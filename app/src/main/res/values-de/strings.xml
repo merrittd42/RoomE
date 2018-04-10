@@ -34,6 +34,7 @@
     <string name ="hg_menu_chat">Chat-Raum</string>
     <string name ="hg_menu_rules">Hausregeln</string>
     <string name ="hg_menu_shop">Einkaufsliste</string>
+    <string name ="hg_homegroup_is">HomeGroup ID ist</string>
     <!--
         Rules Menu Strings
     -->
@@ -85,7 +86,7 @@
     <string name="calendar_event_end_date">Enddatum:</string>
     <string name="calendar_event_end_time">Endzeit:</string>
     <string name="calendar_delete">löschen</string>
-
+    <string name="hg_sign_out">Ausloggen!</string>
 
 
 </resources>

@@ -79,7 +79,7 @@ public class HGMenuFragment extends Fragment implements View.OnClickListener {
 
                 User2 tempUser = dataSnapshot.getValue(User2.class);
                 Log.d("helpMePlz", tempUser.hgID);
-                hgIDField.setText("Homegroup ID is: " + tempUser.hgID);
+                hgIDField.setText(R.string.hg_homegroup_is + tempUser.hgID);
                 hgID = tempUser.hgID;
 
             }

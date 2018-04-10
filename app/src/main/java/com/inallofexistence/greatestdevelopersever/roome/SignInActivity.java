@@ -73,7 +73,7 @@ public class SignInActivity extends AppCompatActivity {
 
     private void redirectToHGCreationOrHGMenu(){
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

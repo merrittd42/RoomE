@@ -83,6 +83,6 @@
             android:id="@+id/signOutbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sign Out!" />
+            android:text="@string/hg_sign_out" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
